@@ -1,17 +1,7 @@
-import com.example.Cat;
 import com.example.Feline;
-import com.example.Lion;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 import static org.junit.Assert.*;
 
@@ -19,12 +9,10 @@ import static org.junit.Assert.*;
 public class FelineTest {
     private final int kittensCount;
     private final String animalKind;
-    private final boolean isCountRight;
 
-    public FelineTest(int kittensCount, String animalKind, boolean isCountRight) {
+    public FelineTest(int kittensCount, String animalKind) {
         this.kittensCount = kittensCount;
         this.animalKind = animalKind;
-        this.isCountRight = isCountRight;
     }
 
     @Parameterized.Parameters
@@ -34,15 +22,6 @@ public class FelineTest {
                 {5, "Хищник", true},
         };
     }
-
-    @Before
-    public void setUp() {
-        MockitoAnnotations.openMocks(this);
-    }
-
-    @Mock
-    Feline feline;
-
     @Test
     public void getFoodTypeTest() throws Exception {
         Feline feline = new Feline();

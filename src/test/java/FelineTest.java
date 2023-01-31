@@ -18,8 +18,8 @@ public class FelineTest {
     @Parameterized.Parameters
     public static Object[][] testParams() {
         return new Object[][]{
-                {2, "Хищник", false},
-                {5, "Хищник", true},
+                {2, "Хищник"},
+                {5, "Хищник"},
         };
     }
     @Test
